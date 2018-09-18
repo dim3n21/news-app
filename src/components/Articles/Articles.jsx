@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Article from './Article/Article';
 import { articles } from '../../fixtures';
 
-const Articles = props => {
+class Articles extends Component {
+     state = {
+          openArticleId: null
+     }
+
+     toggleArticleId = (id) => {
+          this.setState({
+               openArticleId: id
+          })
+     };
+
+     render () {
+          return (
+               <div>
+                  {articles.map(article => (
+                  <div key={article.id}>
+                    <Article
+                    article={article}
+                    toggleOpenArticleId={() => this.toggleArticleId(article.id)}
+                    isOpen={article.id === this.state.openArticleId}/>
+                  </div>))}  
+               </div>
+          );
+     }
      
-     const  articleList = articles.map(article => (<div key={article.id}><Article article={article} /></div>))
-     return (
-          <div>
-             {articleList}  
-          </div>
-     );
 };
 
 export default Articles;

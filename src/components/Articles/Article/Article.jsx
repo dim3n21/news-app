@@ -20,7 +20,7 @@ class Article extends Component {
           return (
                <Jumbotron>
                     <h3>{this.props.article.title}</h3>
-                    <p><Button onClick={this.props.toggleOpenArticleId}bsStyle="primary">
+                    <p><Button onClick={this.props.toggleOpenItem} bsStyle="primary">
                          {this.props.isOpen ? 'close' : 'Learn more'}
                     </Button></p>
                     {this.getBody()}

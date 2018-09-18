@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
 
+import accordion from '../../hoc/accordion/accordion';
 import Article from './Article/Article';
 import { articles } from '../../fixtures';
 
 class Articles extends Component {
-     state = {
-          openArticleId: null
-     }
-
-     toggleArticleId = (id) => {
-          this.setState({
-               openArticleId: id
-          })
-     };
-
+ 
      render () {
           return (
                <div>
                   {articles.map(article => (
                   <div key={article.id}>
                     <Article
-                    article={article}
-                    toggleOpenArticleId={() => this.toggleArticleId(article.id)}
-                    isOpen={article.id === this.state.openArticleId}/>
+                         article = {article}
+                         isOpen = {article.id === this.props.openItemId}
+                         toggleOpenItem = {this.props.toggleOpenItem(article.id)}
+                    />
                   </div>))}  
                </div>
           );
@@ -30,4 +23,4 @@ class Articles extends Component {
      
 };
 
-export default Articles;
+export default accordion(Articles);

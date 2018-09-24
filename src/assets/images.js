@@ -1,0 +1,1 @@
+export const newsPlaceholder = "https://www.dailynews.com/wp-content/uploads/2017/09/img_3776.jpg";

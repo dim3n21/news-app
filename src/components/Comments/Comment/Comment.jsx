@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Panel, Button } from 'react-bootstrap';
+import { Panel} from 'react-bootstrap';
 
 class Comment extends Component {
     

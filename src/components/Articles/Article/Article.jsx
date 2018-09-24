@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Jumbotron, Button} from 'react-bootstrap';
+import { Jumbotron, Button, Grid, Row, Col, Image} from 'react-bootstrap';
+import { newsPlaceholder } from '../../../assets/images';
+
 
 import Comments from '../../Comments/Comments';
 
@@ -9,7 +11,8 @@ class Article extends Component {
           if (this.props.isOpen) {
                return (
                <div>
-                    <p>{this.props.article.text}</p>
+                   <br /> <br />
+                    <p>{this.props.article.content}</p>
                     <Comments comments={this.props.article.comments} />
                </div>
                )
@@ -17,13 +20,30 @@ class Article extends Component {
       };
 
      render() {
+         
+         // Image Placeholder 
+         let src;
+         if (this.props.article.urlToImage) {
+            src = this.props.article.urlToImage } else {
+                src = newsPlaceholder
+            }
+
           return (
                <Jumbotron>
-                    <h3>{this.props.article.title}</h3>
-                    <p><Button onClick={this.props.toggleOpenItem} bsStyle="primary">
-                         {this.props.isOpen ? 'close' : 'Learn more'}
-                    </Button></p>
-                    {this.getBody()}
+                   <Grid>
+                        <Row>
+                            <Col xs={12} md={4} lg={4}>
+                                <Image src={src}  alt="600x400" rounded responsive />  
+                            </Col>
+                            <Col xs={12} md={8} lg={8}>
+                                <h3>{this.props.article.title}</h3><br />
+                                <p><Button onClick={this.props.toggleOpenItem} bsStyle="primary">
+                                    {this.props.isOpen ? 'close' : 'Learn more'}
+                                </Button></p>
+                            </Col>    
+                        </Row>
+                   </Grid>
+                {this.getBody()}
                </Jumbotron>
           );
      }

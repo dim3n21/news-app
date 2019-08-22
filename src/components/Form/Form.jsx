@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup, FormControl, ControlLabel, Jumbotron } from 'react-bootstrap';
+import { FormGroup, FormControl, ControlLabel, Jumbotron, Button } from 'react-bootstrap';
 
 class Form extends Component {
 
@@ -38,7 +38,10 @@ class Form extends Component {
      render() {
           return (
                <Jumbotron>
-                    <h3>Please leave your comment</h3>
+                    <h3>Please leave your comment <span style={{
+                         color: '#FF0000',
+                         fontSize: '1.5rem'
+                    }}>Under Construction</span></h3>
                     <form>
                          <FormGroup
                               controlId="formUser"
@@ -68,6 +71,7 @@ class Form extends Component {
                               />
                               <FormControl.Feedback />
                          </FormGroup>
+                         <Button type="submit">Submit</Button>
                     </form>  
                 </Jumbotron>
           );

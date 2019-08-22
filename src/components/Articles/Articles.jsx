@@ -4,6 +4,7 @@ import axios from 'axios';
 import accordion from '../../hoc/accordion/accordion';
 import Article from './Article/Article';
 import Loader from '../../UI/Loader/Loader';
+import SpinnerLoader from '../../UI/Loader/SpinnerLoader';
 import { articles } from '../../fixtures';
 
 
@@ -37,7 +38,7 @@ class Articles extends Component {
               />
             </div>))
         } else {
-          load = <Loader />
+          load = <SpinnerLoader />
         }
 
         return (

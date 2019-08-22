@@ -7,8 +7,18 @@ const Footer = () => {
         <div>
            <FooterPanel>
                 <Panel.Footer>
-                    <a href="https://newsapi.org/"  target="_blank"  style={{color: '#000000', textDecoration: 'none', textAlign: 'right'}}>News API</a>
-                    <p style={{textAlign: 'right'}}>&copy; Dmitry Andrianov. All right reserved.</p>
+                
+                    <div style={{
+                        display: 'inlineBlock'
+                    }}>API provided by <a href="https://newsapi.org/" 
+                        target="_blank" 
+                        style={{color: '#000000',
+                        textDecoration: 'none'}}>News API</a></div>
+
+                    <div style={{
+                        display: 'inlineBlock'
+                    }}>  &copy; Dmitry Andrianov. All right reserved.</div>
+                
                 </Panel.Footer>
             </FooterPanel> 
         </div>

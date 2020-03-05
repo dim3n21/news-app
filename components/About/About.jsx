@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { Jumbotron, Button, Grid } from 'react-bootstrap';
 import { H1, P } from './styled-components/styled'; 
 import { Link } from 'react-router-dom';
-
-
-
 class About extends Component {
      render() {
           return (

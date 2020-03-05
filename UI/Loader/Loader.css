@@ -1,15 +1,4 @@
-import React, { Component } from 'react';
-import './Loader.css';
-
-class Loader extends Component {
-     render() {
-          return (
-               <div className="loader">
-                    Loading...
-               </div>
-import styled from 'styled-components';
-
-const LoaderStyle = styled.div`   
+.loader {
      color: #c0c0c0;
      font-size: 90px;
      text-indent: -9999em;
@@ -88,15 +77,5 @@ const LoaderStyle = styled.div`
        -webkit-transform: rotate(360deg);
        transform: rotate(360deg);
      }
-   }`
-
-class Loader extends Component {
-    
-     render() {
-          return (
-               <LoaderStyle> Loading... </LoaderStyle>
-          );
-     }
-}
-
-export default Loader;
+   }
+   

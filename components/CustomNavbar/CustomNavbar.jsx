@@ -11,7 +11,7 @@ class CustomNavbar extends Component {
                     <Navbar inverse>
                          <Navbar.Header>
                               <Navbar.Brand>
-                                   <Link to="/"> <Logo src={logo} alt="thumbnail" />  </Link>
+                                   <Link to="/"> <img src={logo} width={40} height={40} alt="thumbnail" style={{margin: -10}} />  </Link>
                               </Navbar.Brand>
                          </Navbar.Header>
                          <Nav pullRight>

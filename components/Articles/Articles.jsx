@@ -39,6 +39,7 @@ class Articles extends Component {
             </div>))
         } else {
           load = <Loader />
+          load = <SpinnerLoader />
         }
 
         return (

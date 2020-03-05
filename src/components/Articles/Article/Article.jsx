@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Jumbotron, Button, Grid, Row, Col, Image} from 'react-bootstrap';
 import { newsPlaceholder } from '../../../assets/images';
 
-
 import Comments from '../../Comments/Comments';
+import Form from '../../Form/Form';
 
 class Article extends Component {
 
@@ -12,8 +12,9 @@ class Article extends Component {
                return (
                <div>
                    <br /> <br />
-                    <p>{this.props.article.content}</p>
+                    <p>{this.props.article.description} <a style={{fontSize:'18px'}} href={this.props.article.url} target='_blank' >Learn More</a></p>
                     <Comments comments={this.props.article.comments} />
+                    <Form />
                </div>
                )
           } return null

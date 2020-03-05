@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, Thumbnail } from 'react-bootstrap';
+import logo from '../../assets/logo.png';
+import Logo from '../Logo/Logo';
 
 class CustomNavbar extends Component {
      render() {
           return (
                <div>
-                    <Navbar inverse>
+                    <Navbar style={{backgroundColor: '#535354'}}>
                          <Navbar.Header>
                               <Navbar.Brand>
-                                   <Link to="/"> News </Link>
+                                   <Link to="/"> <Logo src={logo} alt="thumbnail" />  </Link>
                               </Navbar.Brand>
                          </Navbar.Header>
                          <Nav pullRight>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { Navbar, Nav, NavItem, Thumbnail } from 'react-bootstrap';
 import logo from '../../assets/logo.png';
+import Logo from '../Logo/Logo';
 
 class CustomNavbar extends Component {
      render() {

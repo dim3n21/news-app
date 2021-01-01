@@ -10,12 +10,12 @@ class Form extends Component {
 
      limits = {
           user: {
-               min: 5,
-               max: 15
+               min: 3,
+               max: 50
           },
           text: {
-               min: 20,
-               max: 50
+               min: 3,
+               max: 100
           }
      }
 
@@ -29,20 +29,35 @@ class Form extends Component {
 
      getValidationState = (type) => {
           const length = this.state[type].length;
+     
           if (length > this.limits[type].min && length < this.limits[type].min ) return 'success';
           else if (length < this.limits[type].min) return 'warning';
           else if (length > this.limits[type].max) return 'error';
           return null;
      }
+
+     saveCommentHandler = (event) => {
+          event.preventDefault();
+          if(this.state.user.length > this.limits.user.min || this.state.text.length > this.limits.text.min) {
+               const newComment = {id: this.props.id, user: event.target[0].value, text: event.target[1].value};
+               this.props.onChange(newComment);
+               this.setState({
+                    user: '',
+                    text: ''
+               })
+          }
+     }
+     
      
      render() {
+          console.log("this.props.id: ", this.props.id);
           return (
                <Jumbotron>
                     <h3>Please leave your comment <span style={{
                          color: '#FF0000',
                          fontSize: '1.5rem'
                     }}>Under Construction</span></h3>
-                    <form>
+                    <form onSubmit={this.saveCommentHandler}>
                          <FormGroup
                               controlId="formUser"
                               bsSize="sm"
@@ -52,7 +67,7 @@ class Form extends Component {
                               <FormControl
                                    type="text"
                                    value={this.state.user}
-                                   placeholder="Enter your comment"
+                                   placeholder="Enter your name"
                                    onChange={this.handleChange('user')}
                               />
                               <FormControl.Feedback />

@@ -5,11 +5,16 @@ import Form from '../Form/Form';
 
 
 class Comments extends Component {
-     static defaultProps = {
-          comments: []
-     };
+     // static defaultProps = {
+     //      comments: [
+     //           {id: 1, user: "John Doe", text: "Hey this article was very interesting"},
+     //           {id: 2, user: "John Doe", text: "Hey this article was very interesting"},
+     //           {id: 3, user: "John Doe", text: "Hey this article was very interesting"},
+     //           {id: 4, user: "John Doe", text: "Hey this article was very interesting"}
+     //      ]
+     // };
 
-     state ={
+     state = {
           isOpen: false
      };
 
@@ -28,7 +33,6 @@ class Comments extends Component {
                                 <Comment 
                                     comment={comment}/>
                             </div>)}
-                        <Form />   
                     </div>  
                )
           }
@@ -41,8 +45,8 @@ class Comments extends Component {
          
           return (
                <div> 
-                    <p><Button bsStyle={ this.state.isOpen ? 'danger' : 'success'}
-                              onClick={this.toggleOpen}>{this.state.isOpen ? 'hide comments' : 'show comments'}
+                    <p><Button bsStyle={ this.state.isOpen ? "danger" : "success"}
+                              onClick={this.toggleOpen}>{this.state.isOpen ? 'Hide Comments' : 'Show Comments'}
                          </Button>
                     </p>
                     {this.getBody()}
